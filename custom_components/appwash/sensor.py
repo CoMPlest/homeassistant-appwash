@@ -99,6 +99,6 @@ class AppWashStateSensor(SensorEntity):
         return {
             "identifiers": {(DOMAIN, self.unique_id)},
             "name": self._attr_name,
-            "areaId": self._location_id,
+            "area_id": self._location_id,
             "manufacturer": "Miele",
         }
