@@ -20,10 +20,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     password = entry.data[CONF_PASSWORD]
     location = entry.data[CONF_LOCATION]
 
-    hass.data[DOMAIN][entry.entry_id] = AppWash(email, password, location)
-    # hass.data.setdefault(DOMAIN, {})[entry.entry_id] = AppWash(
-    #     email, password, location
-    # )
+    # hass.data[DOMAIN][entry.entry_id] = AppWash(email, password, location)
+    hass.data.setdefault(DOMAIN, {})[entry.entry_id] = AppWash(
+        email, password, location
+    )
 
     # hass.config_entries.async_setup_platforms(entry, PLATFORMS)
     # Swap for version 2022.8
